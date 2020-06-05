@@ -21,6 +21,7 @@ class Striker(TimeStampedModel):
     description = models.TextField("Description", blank=True)
     age = models.IntegerField("Age", blank=True)
     club = models.CharField("Current Club", max_length=255)
+    nationality = models.CharField("Nationality", max_length=255, unique=False, null=True, blank=True)
     role = models.CharField("Role", max_length=30, choices=Role.choices, default=Role.UNSPECIFIED)
 
     def __str__(self):
