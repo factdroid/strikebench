@@ -12,7 +12,7 @@
     
     {% for striker in striker_list %}
 
-    <li><a href="#TODO">{{ striker.name }}</a></li>
+    <li><a href="{% url 'strikers:detail' striker.slug %}">{{ striker.name }}</a></li>
         
     {% endfor %}
         

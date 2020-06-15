@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Strikers: {{ striker.name }}{% endblock title %}
+
+
+{% block content %}
+
+<h2>{{ striker.name }}</h2>
+
+
+{% if striker.role %}
+
+    <p>Role: {{ striker.get_role_display }}</p>
+    
+{% endif %}
+
+
+{% if striker.description %}
+
+    <p>Description: {{ striker.description }}</p>
+    
+{% endif %}
+    
+    
+    
+{% endblock content %}
+    
+    
