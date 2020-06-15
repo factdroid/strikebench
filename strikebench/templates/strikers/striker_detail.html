@@ -21,6 +21,16 @@
     <p>Description: {{ striker.description }}</p>
     
 {% endif %}
+
+
+{% if striker.nationality %}
+    <p>
+        Nationality: {{ striker.nationality.name }}
+        <img src="{{ striker.nationality.flag }}" alt="">
+    </p>
+    
+{% endif %}
+    
     
     
     

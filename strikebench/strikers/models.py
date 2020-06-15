@@ -3,6 +3,8 @@ from django.db import models
 from autoslug import AutoSlugField
 from model_utils.models import TimeStampedModel
 
+from django_countries.fields import CountryField
+
 class Striker(TimeStampedModel):
 
     class Role(models.TextChoices):
@@ -21,7 +23,7 @@ class Striker(TimeStampedModel):
     description = models.TextField("Description", blank=True)
     age = models.IntegerField("Age", blank=True)
     club = models.CharField("Current Club", max_length=255)
-    nationality = models.CharField("Nationality", max_length=255, unique=False, null=True, blank=True)
+    nationality = CountryField("Nationality", max_length=255, unique=False, null=True, blank=True)
     role = models.CharField("Role", max_length=30, choices=Role.choices, default=Role.UNSPECIFIED)
 
     def __str__(self):
